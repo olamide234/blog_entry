@@ -1,5 +1,16 @@
 
 {% extends 'base.html' %}
+{% block headercontent %}
+    <div class='nav-left'>
+        <h1>
+        <a href='{% url "home" %}'>Django blog</a>
+        </h1>
+    </div>
+    <div class='nav-right'>
+        <a href='{% url "post_new" %}'>New Blog Post</a>
+    </div>
+{% endblock headercontent %}
+
 {% block content %}
     <div class="post-entry">
         <h2>{{post.title}}</h2>

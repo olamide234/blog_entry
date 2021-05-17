@@ -1,0 +1,32 @@
+<!--Register page-->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block headercontent %}
+    <div class='top'>
+        <!-- internal links -->
+        <a href="{% url 'register_user' %}">Sign up</a>
+        <a href="{% url 'login_user' %}">Log in</a>
+    </div>
+{% endblock headercontent %}
+
+{% block content %}
+    <div class='center'>
+        <h1 id='formheading'>
+            Sign up
+        </h1>
+        <div class='register_page'>
+            <div class='the_form'>
+                <form method='post'>
+                    {% csrf_token %}
+                    {{ register_form|crispy }}
+
+                    <button data-bn-type='button' type="submit" class='sign_up'>Sign up</button>
+
+                    <div class='option'>
+                        Already have an account?<a href="{% url 'login_user' %}">Log in</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,4 +1,15 @@
 {% extends 'base.html' %}
+{% block headercontent %}
+    <div class='nav-left'>
+        <h1>
+        <a href='{% url "home" %}'>Django blog</a>
+        </h1>
+    </div>
+    <div class='nav-right'>
+        <a href='{% url "post_new" %}'>New Blog Post</a>
+    </div>
+{% endblock headercontent %}
+
 {% block content %}
     <h1>Delete post</h1>
     <form action='' method='post'>

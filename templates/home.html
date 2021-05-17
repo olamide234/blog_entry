@@ -1,5 +1,20 @@
 <!--Home page -->
 {% extends 'base.html' %}
+
+{% block headercontent %}
+    <nav>
+        <a class="nav-link" href="{% url 'logout_user' %}">Logout</a>
+    </nav>
+    <div class='nav-left'>
+        <h1>
+        <a href='{% url "home" %}'>Django blog</a>
+        </h1>
+    </div>
+    <div class='nav-right'>
+        <a href='{% url "post_new" %}'>New Blog Post</a>
+    </div>
+{% endblock headercontent %}
+            
 {% block content %}
     {% for post in object_list %} <!--the object_list here comes with listview frm django in views.py-->
     <div class='post-entry'>
